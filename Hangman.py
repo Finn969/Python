@@ -112,21 +112,22 @@ def playagain():
     print('Do you want to play another round?')
     return input().lower().startswith('y')
 
-print('''
- _                                             
-| |                                            
-| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
-| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
-| | | | (_| | | | | (_| | | | | | | (_| | | | |
-|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
-                    __/ |                      
-                   |___/  By Finn Macrae ''')
+print('''                                                        |/|
+ _                                                     (___)           
+| |                                                    // \\\\         
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __         //   \\\\         
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \       ||     ||              
+| | | | (_| | | | | (_| | | | | | | (_| | | | |      ||     ||      
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|      ||     ||
+                    __/ |                             \\\\___//
+                   |___/  By Finn Macrae               ----- ''')
 
 wrong = ''
 correct = ''
 hangword = ''
 gameover = False
-lives = len(HANGMANPICS)
+lives = len(HANGMANPICS)-1
+
 won = False
 
 def twoplayer():
