@@ -1,3 +1,4 @@
+#!/usr/bin/env python3.8
 def create_phone_number(n):
     bracketed = n[0:3]
     middles = n[3:6]
@@ -9,3 +10,7 @@ def create_phone_number(n):
     
     phone_number = "("+sbrack+") "+smid+"-"+slast    #Concaternate strings with formatting
     return phone_number
+
+my_number = [1,2,3,4,5,6,7,8,9,0]
+
+print(create_phone_number(my_number))
