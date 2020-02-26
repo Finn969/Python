@@ -88,5 +88,4 @@ while player == False:
     else:
         print("That doesn't look valid; type 'r', 'p' or 's' to select!")
 
-
     player = False
