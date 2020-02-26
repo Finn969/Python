@@ -119,7 +119,7 @@ def getGuess(alreadyguessed):
             print('One letter at a time')
         elif guess in alreadyguessed:
             print('You already guessed that!')
-        elif guess not in 'qwertyuiopasdfghjklzxcvbnm':
+        elif charcheck(guess) == False:
             print('Please enter a lowercase l e t t e r, dummy')
         else:
             return guess
@@ -167,7 +167,7 @@ while gameover==False:
             won = False
             break
     if won:
-        print('You win! The word was '+ hangword+'!')
+        print('You win! The word was '+ hangword.upper()+'!')
         gameover = True
     if guess not in hangword:
         wrong = wrong + guess
