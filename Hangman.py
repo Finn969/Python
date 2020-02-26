@@ -1,9 +1,20 @@
+#!/usr/bin/env python3.8
+
 from random import randint
 words = ('apple', 'antelope', 'banana','badger', 'colour','circular', 'dizzy','dither', 'energy','expert', 'flesh','framed', 'grape','giant', 'holiday','hopeful','hymn', 'icicle','irate', 'jazzy','jigsaw', 'knitting','kayaking', 'lumpy','lynx', 'muscle','microwave', 'night','numbskull', 'opened','oxygen','present', 'queen','queue','remove','rhythm','settle','squawk','touch','twelfth','untied','unknown','vases','voodoo','wrench','whiskey','young','yacht','zoomed','zodiac')
 def inputword():
-    user_word = (str(input('Player 1: please enter a word for Player 2 to guess ')))
-    print('\n' * 50)
-    return user_word
+    while True:
+        user_word = (str(input('Player 1: please enter a word for Player 2 to guess: ')))
+    
+        if len(user_word) >= 20:
+           print('That looks too long, please enter a word of 20 characters or less')
+        if len(user_word) <1:
+            print("")
+        elif user_word not in 'qwertyuiopasdfghjklzxcvbnm':
+            print('Hey! only enter lowercase letters!')
+        else:
+            print('\n' * 50)
+            return user_word
 
 
 HANGMANPICS = ['''
@@ -167,7 +178,7 @@ while gameover==False:
             wrong= ""
             correct= ""
             gameover = False
-            lives = len(HANGMANPICS)
+            lives = len(HANGMANPICS)-1
             if twoplayer():
                 hangword = inputword()
             else:
