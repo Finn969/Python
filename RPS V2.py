@@ -1,7 +1,19 @@
+#!/usr/bin/env python3.8
+
 from random import randint
-c = ["r", "p", "s"]
+
 names = ["Rock", "Paper", "Scissors"]
 
+def comp_choice():
+        c = ["r", "p", "s"]
+        if rocks>papers and rocks>scissors:
+            return c[1]                   
+        elif papers>rocks and papers>scissors:
+            return c[2]        
+        elif scissors>rocks and scissors>papers:
+            return c[0]
+        else:
+            return c[randint(0,2)]       
 player = False
 
 rocks = 0
@@ -11,15 +23,14 @@ scissors = 0
 wins = 0
 losses = 0
 ties = 0
-
-computer = c[randint(0,2)]
-       
-
+    
+computer = comp_choice()
 while player == False:
+    computer = comp_choice()
     print("You have won",wins,"times.   You have lost",losses,"times.   You have tied",ties,"times.")
     print("You have played",rocks,"rocks.   You have played",papers,"papers.    You have played",scissors,"scissors.")
     print("")
-
+    
     player = input("[r]ock, [p]aper, [s]cissors! ")
     print("")
     if player == "r":
@@ -28,6 +39,7 @@ while player == False:
             print(player, "versus", computer,"!")
             print("It's a tie! Try again!")
             ties = ties + 1
+            
 
         elif computer == "p":
             print(player, "versus", computer,"!")
@@ -76,16 +88,5 @@ while player == False:
     else:
         print("That doesn't look valid; type 'r', 'p' or 's' to select!")
 
-    if rocks>papers and rocks>scissors:
-        computer == c[1]
-        
-    if papers>rocks and papers>scissors:
-        computer == c[2]
-        
-    if scissors>rocks and scissors>papers:
-        computer == c[0]
-        
-    else:
-        computer = c[randint(0,2)]
 
     player = False
