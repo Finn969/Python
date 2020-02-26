@@ -11,7 +11,7 @@ def inputword():
     while True:
         user_word = str((input('Player 1: please enter a word for Player 2 to guess: ')))
         
-        if len(user_word) >= 20:
+        if len(user_word) > 20:
             print('That looks too long, please enter a word of 20 characters or less')
         if len(user_word) <1:
             print("")
@@ -174,7 +174,7 @@ while gameover==False:
         lives = lives - 1
         if len(wrong) == len(HANGMANPICS) - 1:
             display(HANGMANPICS,wrong,correct,hangword)
-            print('You have run out of guesses!\nAfter ' + str(len(wrong)) + ' wrong guesses and ' + str(len(correct)) + ' correct guesses, the word was "' + hangword + '"')
+            print('You have run out of guesses!\nAfter ' + str(len(wrong)) + ' wrong guesses and ' + str(len(correct)) + ' correct guesses, the word was "' + hangword.upper() + '"')
             gameover = True
 
         
