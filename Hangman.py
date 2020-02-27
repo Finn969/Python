@@ -3,10 +3,6 @@ import re
 from random import randint
 words = ('apple', 'antelope', 'banana','badger', 'colour','circular', 'dizzy','dither', 'energy','expert', 'flesh','framed', 'grape','giant', 'holiday','hopeful','hymn', 'icicle','irate', 'jazzy','jigsaw', 'knitting','kayaking', 'lumpy','lynx', 'muscle','microwave', 'night','numbskull', 'opened','oxygen','present', 'queen','queue','remove','rhythm','settle','squawk','touch','twelfth','untied','unknown','vases','voodoo','wrench','whiskey','young','yacht','zoomed','zodiac')
 
-
-def charcheck(strg, search=re.compile(r'[^a-z]').search):
-    return not bool(search(strg))
-
 def inputword():
     while True:
         user_word = str((input('Player 1: please enter a word for Player 2 to guess, lowercase letters only: ')))
@@ -16,7 +12,7 @@ def inputword():
         if len(user_word) <1:
             print("")
         elif not user_word.isalpha():
-            print('Please only enter  letters')
+            print('Please only enter letters')
         elif not user_word.islower():
             print('Please only use lowercase characters')
         else:
@@ -121,8 +117,10 @@ def getGuess(alreadyguessed):
             print('One letter at a time')
         elif guess in alreadyguessed:
             print('You already guessed that!')
-        elif charcheck(guess) == False:
-            print('Please enter a lowercase l e t t e r, dummy')
+        elif guess.isalpha == False:
+            print('Please enter a letter')
+        elif guess.islower == False:
+            print('Please only enter lowercase characters')
         else:
             return guess
 
