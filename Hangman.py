@@ -9,14 +9,16 @@ def charcheck(strg, search=re.compile(r'[^a-z]').search):
 
 def inputword():
     while True:
-        user_word = str((input('Player 1: please enter a word for Player 2 to guess: ')))
+        user_word = str((input('Player 1: please enter a word for Player 2 to guess, lowercase letters only: ')))
         
         if len(user_word) > 20:
             print('That looks too long, please enter a word of 20 characters or less')
         if len(user_word) <1:
             print("")
-        elif charcheck(user_word) == False:
-            print('Please only enter lowercase letters')
+        elif not user_word.isalpha():
+            print('Please only enter  letters')
+        elif not user_word.islower():
+            print('Please only use lowercase characters')
         else:
             print('\n' * 50)
             return user_word
